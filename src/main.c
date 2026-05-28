@@ -31,6 +31,7 @@
 #include <config.h>
 #include <user.h>
 #include <status.h>
+#include <unistd.h>
 
 // Server Status
 int _status = 0;

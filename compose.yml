@@ -1,0 +1,24 @@
+services:
+  psppeeps-adhoc-server:
+    build:
+      context: .
+    image: psppeeps-adhoc-server:psp-only
+    container_name: psppeeps-adhoc-server
+    restart: unless-stopped
+    ports:
+      - "27312:27312/tcp"
+
+  psppeeps-adhoc-exporter:
+    build:
+      context: ./exporter
+    image: psppeeps-adhoc-exporter:latest
+    container_name: psppeeps-adhoc-exporter
+    restart: unless-stopped
+    environment:
+      ADHOC_CONTAINER: psppeeps-adhoc-server
+      EXPORTER_PORT: "27314"
+      LOG_TAIL: "5000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    ports:
+      - "127.0.0.1:27314:27314"

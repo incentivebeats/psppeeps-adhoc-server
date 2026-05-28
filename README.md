@@ -21,12 +21,9 @@ Other features include Alphine 3.23 update and an exporter for metrics.
 
 # Launch
 ```
-docker run --port 27312:27312 -it ghcr.io/souler/ppsspp-adhoc
+docker build -t psppeeps-adhoc-server:psp-only .
+docker run --rm -it -p 27312:27312/tcp psppeeps-adhoc-server:psp-only
 ```
 
 ## Contributors
 - [Kyhel](https://github.com/Kyhel) for sharing the original PPSSPP AdhocServer source code on [the forums](http://forums.ppsspp.org/showthread.php?tid=3595&pid=59021#pid59021)  
-
-
-## Building
-- Make sure you have installed the sqlite-libs dependencies.

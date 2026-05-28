@@ -35,6 +35,34 @@ SceNetAdhocctlUserNode * _db_user = NULL;
 // Game Database
 SceNetAdhocctlGameNode * _db_game = NULL;
 
+static int is_allowed_phantasy_star_portable_product(const SceNetAdhocctlProductCode *product)
+{
+	static const char *allowed_products[] = {
+		"ULUS10410", /* Phantasy Star Portable US */
+		"ULES01218", /* Phantasy Star Portable EU/AU */
+		"ULJM05309", /* Phantasy Star Portable JP */
+		"ULJM08023", /* Phantasy Star Portable JP PSP the Best */
+
+		"ULUS10529", /* Phantasy Star Portable 2 US */
+		"ULES01439", /* Phantasy Star Portable 2 EU/AU */
+		"ULJM05493", /* Phantasy Star Portable 2 JP */
+		"NPJH50043", /* Phantasy Star Portable 2 JP PSN */
+		"ULJM08030", /* Phantasy Star Portable 2 JP PSP the Best */
+
+		"ULJM05732", /* Phantasy Star Portable 2 Infinity JP */
+		"NPJH50332", /* Phantasy Star Portable 2 Infinity JP PSN */
+	};
+
+	unsigned int i;
+	for(i = 0; i < sizeof(allowed_products) / sizeof(allowed_products[0]); i++)
+	{
+		if(strncmp(product->data, allowed_products[i], PRODUCT_CODE_LENGTH) == 0) return 1;
+	}
+
+	return 0;
+}
+
+
 /**
  * Login User into Database (Stream)
  * @param fd Socket
@@ -115,6 +143,23 @@ void login_user_data(SceNetAdhocctlUserNode * user, SceNetAdhocctlLoginPacketC2S
 	// Valid Packet Data
 	if(valid_product_code == 1 && memcmp(&data->mac, "\xFF\xFF\xFF\xFF\xFF\xFF", sizeof(data->mac)) != 0 && memcmp(&data->mac, "\x00\x00\x00\x00\x00\x00", sizeof(data->mac)) != 0 && data->name.data[0] != 0)
 	{
+		// Reject non-Phantasy Star Portable product IDs before crosslink/override.
+		if(!is_allowed_phantasy_star_portable_product(&data->game))
+		{
+			uint8_t * ip = (uint8_t *)&user->resolver.ip;
+			char safegamestr[PRODUCT_CODE_LENGTH + 1];
+
+			memset(safegamestr, 0, sizeof(safegamestr));
+			strncpy(safegamestr, data->game.data, PRODUCT_CODE_LENGTH);
+
+			printf("Rejected non-Phantasy-Star-Portable product code %s from %u.%u.%u.%u.\n",
+				safegamestr, ip[0], ip[1], ip[2], ip[3]);
+
+			logout_user(user);
+			return;
+		}
+
+
 		// Game Product Override
 		game_product_override(&data->game);
 		

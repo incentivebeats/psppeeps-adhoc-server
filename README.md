@@ -18,6 +18,7 @@ It's PPSSPP Adhoc Server - but only for Phantasy Star Portbale
 		"NPJH50332", /* Phantasy Star Portable 2 Infinity JP PSN */
 ```
 
+# Launch
 ```
 docker run --port 27312:27312 -it ghcr.io/souler/ppsspp-adhoc
 ```

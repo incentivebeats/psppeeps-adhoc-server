@@ -1,5 +1,6 @@
 # PSPPEEPS Adhoc Server  
-It's PPSSPP Adhoc Server - but only for Phantasy Star Portbale  
+It's PPSSPP Adhoc Server - but only for Phantasy Star Portable.  
+Other features include Alphine 3.23 update and an exporter for metrics.  
 
 # Supported Games  
 ```

@@ -42,6 +42,15 @@ static int is_allowed_phantasy_star_portable_product(const SceNetAdhocctlProduct
 		"ULES01218", /* Phantasy Star Portable EU/AU */
 		"ULJM05309", /* Phantasy Star Portable JP */
 		"ULJM08023", /* Phantasy Star Portable JP PSP the Best */
+
+		"ULUS10529", /* Phantasy Star Portable 2 US */
+		"ULES01439", /* Phantasy Star Portable 2 EU/AU */
+		"ULJM05493", /* Phantasy Star Portable 2 JP */
+		"NPJH50043", /* Phantasy Star Portable 2 JP PSN */
+		"ULJM08030", /* Phantasy Star Portable 2 JP PSP the Best */
+
+		"ULJM05732", /* Phantasy Star Portable 2 Infinity JP */
+		"NPJH50332", /* Phantasy Star Portable 2 Infinity JP PSN */
 	};
 
 	unsigned int i;

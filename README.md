@@ -29,4 +29,4 @@ docker run --port 27312:27312 -it ghcr.io/souler/ppsspp-adhoc
 
 
 ## Building
-- Make sure you have installed the sqlite-dev dependencies.
+- Make sure you have installed the sqlite-libs dependencies.

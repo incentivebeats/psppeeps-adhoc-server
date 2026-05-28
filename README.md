@@ -1,5 +1,5 @@
 # PSPPEEPS Adhoc Server  
-It's PPSSPP Adhoc Server - but only for Phantasy Star Portable.  
+It's [PPSSPP Adhoc Server](https://github.com/Souler/ppsspp-adhoc-server) - but only for Phantasy Star Portable.  
 Other features include Alphine 3.23 update and an exporter for metrics.  
 
 # Supported Games  
@@ -25,7 +25,7 @@ docker run --port 27312:27312 -it ghcr.io/souler/ppsspp-adhoc
 ```
 
 ## Contributors
-- [Kyhel](https://github.com/Kyhel) for sharing the original PPSSPP AdhocServer source code on [the forums](http://forums.ppsspp.org/showthread.php?tid=3595&pid=59021#pid59021)
+- [Kyhel](https://github.com/Kyhel) for sharing the original PPSSPP AdhocServer source code on [the forums](http://forums.ppsspp.org/showthread.php?tid=3595&pid=59021#pid59021)  
 
 
 ## Building

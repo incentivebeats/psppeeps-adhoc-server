@@ -25,6 +25,8 @@
 #include <status.h>
 #include <config.h>
 #include <sqlite3.h>
+#include <unistd.h>
+#include <sys/socket.h>
 
 // User Count
 uint32_t _db_user_count = 0;

@@ -22,3 +22,14 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
     ports:
       - "127.0.0.1:27314:27314"
+
+
+  psppeeps-aemu-postoffice:
+    build:
+      context: .
+      dockerfile: Dockerfile.postoffice
+    image: psppeeps-aemu-postoffice:latest
+    container_name: psppeeps-aemu-postoffice
+    restart: unless-stopped
+    ports:
+      - "27313:27313/tcp"

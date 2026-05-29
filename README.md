@@ -1,6 +1,7 @@
 # PSPPEEPS Adhoc Server  
 It's [PPSSPP Adhoc Server](https://github.com/Souler/ppsspp-adhoc-server) - but only for Phantasy Star Portable.  
 Other features include Alphine 3.23 update, [aemu_postoffice](https://github.com/Kethen/aemu_postoffice), and an exporter for metrics.  
+You can easily fork and edit this to allow your own specific list of games or remove the allowlist entirely.
 
 # Supported Games  
 ```

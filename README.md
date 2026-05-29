@@ -22,8 +22,7 @@ You can easily fork and edit this to allow your own specific list of games or re
 
 # Launch
 ```
-docker build -t psppeeps-adhoc-server:psp-only .
-docker run --rm -it -p 27312:27312/tcp psppeeps-adhoc-server:psp-only
+docker compose up -d --build
 ```
 
 ## Contributors

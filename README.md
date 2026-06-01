@@ -29,3 +29,12 @@ docker compose up -d --build
 
 ## Contributors
 - [Kyhel](https://github.com/Kyhel) for sharing the original PPSSPP AdhocServer source code on [the forums](http://forums.ppsspp.org/showthread.php?tid=3595&pid=59021#pid59021)  
+
+## Play on PSO Peeps  
+Server addresses:  
+US Server: `108.175.11.140`  
+EU Server:  `65.21.79.231`  
+
+Add one of the above addresses above in PPSSPP's Network -> Ad Hoc Multiplayer settings.  
+Set `Try to use server-provided packet relayer` to Yes.  
+Assign yourself a nickname.  

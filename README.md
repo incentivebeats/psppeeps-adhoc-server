@@ -1,7 +1,7 @@
 # PSPPEEPS Adhoc Server  
 It's [PPSSPP Adhoc Server](https://github.com/Souler/ppsspp-adhoc-server) - but only for Phantasy Star Portable.  
 No ZeroTier or other third-party VPN required.  
-Features include Alpine 3.23 update, [aemu_postoffice](https://github.com/Kethen/aemu_postoffice), and an exporter for metrics.  
+Features include Alpine 3.23, [aemu_postoffice](https://github.com/Kethen/aemu_postoffice), and an exporter for metrics.  
   
 You can easily fork and edit this to allow your own specific list of games or remove the allowlist entirely.
 
